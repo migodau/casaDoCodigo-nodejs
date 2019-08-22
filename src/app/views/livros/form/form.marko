@@ -10,7 +10,9 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-4">
-                        <h1 class="logo"><img src="/estatico/imagens/logo-casadocodigo.svg" alt="Casa do Código" /></h1>
+                        <h1 class="logo">
+                            <img src="/estatico/imagens/logo-casadocodigo.svg" alt="Casa do Código" />
+                        </h1>
                     </div>
                     <div class="cabecalhoPrincipal-navegacao col-8">
                         <a href="#" class="login">
@@ -23,6 +25,12 @@
         <main class="conteudoPrincipal">
             <div class="container">
                 <h1>Cadastro de livros</h1>
+
+                <div if(data.errosValidacao)>
+                    <div class="alert alert-danger" for(erro in data.errosValidacao)>
+                        ${erro.param} - ${erro.msg}
+                    </div>
+                </div>
                 
                 <form action="/livros" method="post">
 
